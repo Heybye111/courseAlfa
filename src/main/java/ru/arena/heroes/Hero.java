@@ -13,6 +13,7 @@ public class Hero {
         this.name = name;
         this.level = level;
         this.health = health;
+        MAX_LEVEL = 100;
     }
 
     public void printInfo() {
@@ -29,17 +30,9 @@ public class Hero {
         }
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     public void levelUp() {
         int newLevel = level + 1;
-        if (newLevel >= MAX_LEVEL) {
+        if (newLevel > MAX_LEVEL) {
             newLevel = MAX_LEVEL;
         } else {
             level = newLevel;
@@ -53,14 +46,26 @@ public class Hero {
     public void attack(String target) {
         System.out.println("Герой наносит обычный удар. Цель: " + target);
     }
+
     public void attack(String target, int times) {
         System.out.println("Герой наносит обычный удар. Цель: " + target + times + "раз");
     }
+
     public static void printHeroesCreated() {
         heroesCreated++;
+        System.out.println(heroesCreated);
     }
-    public final void rest(){
+
+    public final void rest() {
         System.out.println("Герой отдыхает и восстанавливает силы");
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     @Override

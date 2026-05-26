@@ -14,14 +14,21 @@ public class App {
         for (Hero hero : heroes) {
             hero.attack();
             hero.printInfo();
+            Hero.printHeroesCreated();
         }
 
-        final Knight knight = new Knight("Dragon", 14, 77);
+        final Knight knight = new Knight("Dragon", 100, 77);
 
         System.out.println("Рыцарь: " + knight);
 
         knight.setHealth(75);
 
         System.out.println("Рыцарь: " + knight);
+
+        knight.levelUp();
+
+        System.out.println("Рыцарь: " + knight);
     }
+
+
 }
